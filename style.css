@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    justify-content: left;
+    margin-left: 30px;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(80, 79, 79);
+}
+
+.navigation {
+    position: relative;
+    height: 500px;
+    width: 70px;
+    border-radius: 5px;
+    background: black;
+    box-shadow: 10px 0 0 rgb(0, 102, 255);
+    overflow-x: hidden;
+    transition: width 0.5s;
+}
+
+.navigation:hover {
+    width: 300px;
+}
+
+.navigation ul {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+    position: relative;
+    font-size: 1.5rem;
+    z-index: 2;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.navigation ul li.active {
+    background: rgb(0, 102, 255);
+}
+
+.navigation ul li.active::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.navigation ul li.active::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.navigation ul li:hover {
+    cursor: pointer;
+    background: rgb(0, 102, 255);
+    animation: animate 0.4s linear;
+    border-radius: 10px;
+    animation-direction: normal;
+}
+
+@keyframes animate {
+    0% {
+        width: 0%;
+        background: rgb(0, 102, 255);
+    }
+
+    50% {
+        width: 50%;
+        background: rgb(0, 102, 255);
+    }
+
+    100% {
+        width: 100%;
+        background: rgb(0, 102, 255);
+    }
+}
